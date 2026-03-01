@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: white;
+  color: black;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px;
+}
+
+.title {
+  font-size: 40px;
+  color: #FF6A00;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.article {
+  line-height: 1.6;
+}
