@@ -1,74 +1,58 @@
-```javascript
 import { useState } from "react";
 
 export default function EmailCapture() {
-
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    setMessage("Subscribed successfully.");
+  const subscribe = () => {
+    setMessage("Successfully subscribed.");
     setEmail("");
-  }
+  };
 
   return (
     <div style={{
-      background: "#111111",
-      padding: "24px",
+      background: "#111",
+      padding: "20px",
       borderRadius: "12px",
-      marginTop: "40px"
+      marginTop: "30px"
     }}>
 
-      <h3 style={{ color: "#FF6A00" }}>
-        Subscribe to Modern Dispatch Global
+      <h3 style={{ color: "white" }}>
+        Join Modern Dispatch Global
       </h3>
 
-      <form onSubmit={handleSubmit}>
+      <input
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Enter your email"
+        style={{
+          width: "100%",
+          padding: "10px",
+          marginTop: "10px",
+          background: "#0A0A0A",
+          border: "1px solid #333",
+          color: "white"
+        }}
+      />
 
-        <input
-          type="email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
-          style={{
-            padding: "12px",
-            width: "100%",
-            marginTop: "10px",
-            background: "#000",
-            color: "#fff",
-            border: "1px solid #333",
-            borderRadius: "6px"
-          }}
-        />
+      <button
+        onClick={subscribe}
+        style={{
+          background: "#FF6A00",
+          border: "none",
+          padding: "10px 20px",
+          marginTop: "10px",
+          color: "white",
+          cursor: "pointer"
+        }}
+      >
+        Subscribe
+      </button>
 
-        <button
-          type="submit"
-          style={{
-            marginTop: "10px",
-            background: "#FF6A00",
-            color: "#fff",
-            padding: "12px",
-            border: "none",
-            borderRadius: "6px",
-            width: "100%",
-            cursor: "pointer"
-          }}
-        >
-          Subscribe
-        </button>
-
-      </form>
-
-      {message && (
-        <p style={{ color: "#00ff99", marginTop: "10px" }}>
-          {message}
-        </p>
-      )}
+      <div style={{ color: "#A1A1AA", marginTop: "10px" }}>
+        {message}
+      </div>
 
     </div>
   );
-}
-```
-
+            }
