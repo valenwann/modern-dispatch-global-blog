@@ -1,17 +1,19 @@
-```javascript
-import Clock from "../components/Clock";
-import Currency from "../components/Currency";
+import dynamic from "next/dynamic";
+
+const Clock = dynamic(() => import("../components/Clock"), { ssr: false });
+const Currency = dynamic(() => import("../components/Currency"), { ssr: false });
+const ShareDropdown = dynamic(() => import("../components/ShareDropdown"), { ssr: false });
+
 import ArticleCard from "../components/ArticleCard";
 import EmailCapture from "../components/EmailCapture";
-import ShareDropdown from "../components/ShareDropdown";
 
 export default function Home() {
 
   return (
 
-    <div style={{
+    <main style={{
       maxWidth: "800px",
-      margin: "auto",
+      margin: "0 auto",
       padding: "20px"
     }}>
 
@@ -30,8 +32,7 @@ export default function Home() {
 
       <EmailCapture />
 
-    </div>
+    </main>
 
   );
 }
-```
