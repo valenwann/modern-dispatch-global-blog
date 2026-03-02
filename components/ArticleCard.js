@@ -1,52 +1,58 @@
-```javascript
-export default function ArticleCard({ title, category, date, image }) {
+export default function ArticleCard({
+  title,
+  category,
+  date,
+  image
+}) {
+
   return (
-    <article style={{
-      background: "#111111",
+
+    <div style={{
       borderRadius: "12px",
       overflow: "hidden",
-      marginBottom: "24px",
-      border: "1px solid #222"
+      background: "#fff",
+      boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
+      transition: "0.3s",
+      cursor: "pointer"
     }}>
-      
+
       <img
         src={image}
-        alt={title}
         style={{
           width: "100%",
-          height: "220px",
+          height: "200px",
           objectFit: "cover"
         }}
       />
 
-      <div style={{ padding: "16px" }}>
-        
+      <div style={{ padding: "20px" }}>
+
         <div style={{
           color: "#FF6A00",
-          fontSize: "12px",
-          marginBottom: "6px"
+          fontSize: "13px",
+          fontWeight: "600"
         }}>
           {category}
         </div>
 
         <h2 style={{
-          color: "#fff",
           fontSize: "20px",
-          margin: "0 0 8px 0"
+          margin: "10px 0"
         }}>
           {title}
         </h2>
 
         <div style={{
-          color: "#888",
-          fontSize: "13px"
+          fontSize: "14px",
+          color: "#777"
         }}>
           {date}
         </div>
 
       </div>
 
-    </article>
+    </div>
+
   );
-}
-```
+
+        }
